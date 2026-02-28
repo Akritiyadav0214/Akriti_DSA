@@ -51,5 +51,11 @@ void sortArray(int *arr,int n){
     sortArray(arr,n-1);
 }
 int main(){
+int arr[4]={5,4,3,2};
+sortArray(arr,4);
+for(int i=0;i<4;i++){
+    cout<<arr[i]<<" ";
 
+}
+return 0;
 }
