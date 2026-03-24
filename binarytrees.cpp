@@ -26,11 +26,20 @@ node* buildtree(node* root){
 
     root->right=buildtree(root->right);
     return root;
-
-
 }
+void inorder(node* root){
+    if(root==NULL){
+        return ;
+    }
+    inorder(root->left);
+    cout<<root->data<<" ",
+    inorder(root->right);
+}
+
 int main(){
     node* root=NULL;
     root=buildtree(root);
+    cout<<"inorder traversal"<<endl;
+    inorder(root);
     return 0;
 }
