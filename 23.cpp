@@ -1,8 +1,12 @@
 #include<iostream>
 #include<vector>
-using namespace std; 
+using namespace std;
+class ListNode{
+    int val;
+    ListNode* next;
    
-class Solution {
+
+
 public:
     // Function to merge 2 sorted linked lists
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
