@@ -1,10 +1,31 @@
 #include<iostream>
-#include<queue>
+
+
 using namespace std;
-int main(){
-    queue<int>q;
-    q.push(11);
-    q.push(15);
-    cout<<"size of queue"<<q.size()<<endl;
-    return 0;
-}
+class Solution {
+    private:
+    int height(TreeNode* root){
+        if(root==NULL){
+            return -1;
+        }
+        int left=height(root->left);
+        int right=height(root->right);
+        int ans=max(left,right)+1;
+        return ans;
+    }
+  public:
+    bool isBalanced(TreeNode* root) {
+       if(root==NULL){
+           return true;
+       }
+       bool left=isBalanced(root->left);
+       bool right=isBalanced(root->right);
+       bool diff=abs(height(root->left)-height(root->right))<=1;
+       if(left&&right&&diff){
+           return true;
+       }
+       else{
+           return false;
+       }
+    }
+};
