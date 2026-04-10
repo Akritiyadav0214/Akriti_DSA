@@ -1,7 +1,12 @@
 #include<iostream>
-
-
 using namespace std;
+class TreeNode{
+    public:
+    int data;
+    TreeNode* root;
+    TreeNode* left;
+    TreeNode* right;
+};
 class Solution {
     private:
     int height(TreeNode* root){
